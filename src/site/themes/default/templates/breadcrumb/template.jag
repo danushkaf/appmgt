@@ -1,0 +1,54 @@
+<%
+/*
+ * Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *   WSO2 Inc. licenses this file to you under the Apache License,
+ *   Version 2.0 (the "License"); you may not use this file except
+ *   in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing,
+ *   software distributed under the License is distributed on an
+ *   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *   KIND, either express or implied.  See the License for the
+ *   specific language governing permissions and limitations
+ *   under the License.
+ */
+
+jagg.template("breadcrumb", function(inputs, outputs, jagg) { %>
+<!--START breadcrumb section-->
+<% if(inputs.pos == "titlebar"){ %>
+<div class="container breadcrumb-section">
+    <div class="row">
+        <div class="span12">
+            <% if(inputs.pageName != "home") { %>
+            <a href="<%=jagg.getAbsoluteUrl("/site/pages/application.jag")%>?applicationName=<%=inputs.applicationName%>&applicationKey=<%=inputs.applicationKey%>"><h1><%=inputs.applicationName%></h1></a>
+            <i class="icon-breadcrumb-section-sep"></i>
+            <h1><%=inputs.pageName%></h1>
+            <% } else { %>
+                <h1><%=inputs.applicationName%></h1>
+            <% } %>
+            </div>
+    </div>
+</div>
+<% }else{ %>
+<div class="container breadcrumb-section-small">
+    <div class="row">
+        <div class="span12">
+           <a href="<%=jagg.getAbsoluteUrl("/site/pages/index.jag")%>">My Applications</a>
+            >
+           <% if(inputs.pageName != "home") { %>
+               <a href="<%=jagg.getAbsoluteUrl("/site/pages/application.jag")%>?applicationName=<%=inputs.applicationName%>&applicationKey=<%=inputs.applicationKey%>"><%=inputs.applicationName%></a>
+               >
+               <%=inputs.pageName%>
+           <% } else { %>
+                <%=inputs.applicationName%>
+           <% } %>
+         </div>
+     </div>
+</div>
+<% } %>
+<!--END breadcrumb section-->
+<% }); %>

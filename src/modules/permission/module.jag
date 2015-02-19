@@ -1,0 +1,78 @@
+<%
+/*
+ * Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *   WSO2 Inc. licenses this file to you under the Apache License,
+ *   Version 2.0 (the "License"); you may not use this file except
+ *   in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing,
+ *   software distributed under the License is distributed on an
+ *   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *   KIND, either express or implied.  See the License for the
+ *   specific language governing permissions and limitations
+ *   under the License.
+ */
+
+jagg.module("permission", {
+
+    checkUserAuthenticated:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").checkUserAuthenticated.apply(this, arguments);
+    },
+
+    checkSystemAdminPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").checkSystemAdminPermission.apply(this, arguments);
+    },
+    checkUserActionPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").checkUserActionPermission.apply(this, arguments);
+    },
+    isUserAccessGranted:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").isUserAccessGranted.apply(this, arguments);
+    },
+    isUserAccessGrantedForPlatform:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").isUserAccessGrantedForPlatform.apply(this, arguments);
+    },
+    hasPermissionToStage:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag").hasPermissionToStage.apply(this, arguments);
+    },
+    hasTenantLevelUserMgtPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). hasTenantLevelUserMgtPermission.apply(this, arguments);
+    },
+    hasAppCreationPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). hasAppCreationPermission.apply(this, arguments);
+    },
+    hasApplevelUserMgtPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). hasApplevelUserMgtPermission.apply(this, arguments);
+    },
+    checkUserAuthorization:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). checkUserAuthorization.apply(this, arguments);
+    },
+    authorizeRole:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/remotePermission.jag"). authorizeRole.apply(this, arguments);
+    },
+    denyRole:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/remotePermission.jag"). denyRole.apply(this, arguments);
+    },
+    isRoleAuthorized:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/remotePermission.jag"). isRoleAuthorized.apply(this, arguments);
+    },
+    invalidateAuthorizationCache:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/remotePermission.jag"). invalidateAuthorizationCache.apply(this, arguments);
+    },
+    hasAppOwnerSpecialPermission:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). hasAppOwnerSpecialPermission.apply(this, arguments);
+    },
+    hasPermissionForAllStages:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). hasPermissionForAllStages.apply(this, arguments);
+    },
+    isUserAccessGrantedForTablink:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). isUserAccessGrantedForTablink.apply(this, arguments);
+    },
+    getOptimizedPermissions:function () {
+        return jagg.require(jagg.getModulesDir() + "permission/permission.jag"). getOptimizedPermissions.apply(this, arguments);
+    }
+});
+%>

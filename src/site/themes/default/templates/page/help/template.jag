@@ -1,0 +1,55 @@
+<%
+/*
+ * Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *   WSO2 Inc. licenses this file to you under the Apache License,
+ *   Version 2.0 (the "License"); you may not use this file except
+ *   in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing,
+ *   software distributed under the License is distributed on an
+ *   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *   KIND, either express or implied.  See the License for the
+ *   specific language governing permissions and limitations
+ *   under the License.
+ */
+
+jagg.template("page/help", function (inputs, outputs, jagg) { %>
+
+<% var section = inputs.section; 
+   var modHelp = jagg.module("help");
+   var helpDetails = modHelp.getHelpMessage(section);
+%>
+<script type="text/javascript">
+var section = '<%= section %>';
+var helpDetails = '<%= helpDetails %>';
+$(document).ready(function(){
+getHelpMessages();
+});
+
+function getHelpMessages(){
+            var helpText = jQuery.parseJSON(helpDetails);
+            var content = "";
+            for(var i in helpText)
+            {
+                var helpLink = helpText[i].link;
+                if(helpLink != null){
+                    content += '<a href='+helpLink+' style="text-decoration:none;"><strong>'+helpText[i].msg+'</strong></a><p>'+helpText[i].subMsg+'</p>';
+            } else {
+                    content += '<strong>'+helpText[i].msg+'</strong><p>'+helpText[i].subMsg+'</p>';
+                }
+            }
+            $('#contextualHelp').html(content);
+        }
+
+</script>
+
+<section class="help-section-top">
+<div id="contextualHelp"></div>
+</section>
+<input type="hidden" id="userName" value='<%= jagg.getUser() %>' />
+<%
+}); %>

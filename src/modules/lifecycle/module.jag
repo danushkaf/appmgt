@@ -1,0 +1,94 @@
+<%
+/*
+ * Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *   WSO2 Inc. licenses this file to you under the Apache License,
+ *   Version 2.0 (the "License"); you may not use this file except
+ *   in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing,
+ *   software distributed under the License is distributed on an
+ *   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *   KIND, either express or implied.  See the License for the
+ *   specific language governing permissions and limitations
+ *   under the License.
+ */
+
+jagg.module("lifecycle", {
+
+    invokeDeployToStage:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").invokeDeployToStage.apply(this, arguments);
+    },
+    
+    addGenericArtifact:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").addGenericArtifact.apply(this, arguments);
+    },
+    
+    invokeAspectWithParameter:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").invokeAspectWithParameter.apply(this, arguments);
+    },
+
+    invokeDoVersion:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").invokeDoVersion.apply(this, arguments);
+    },
+    
+    invokeCreateArtifact:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").invokeCreateArtifact.apply(this, arguments);
+    },
+
+    getLifeCycleBean:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getLifeCycleBean.apply(this, arguments);
+    },
+    getAppVersionsInStagesWithLifeCycleInfo:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getAppVersionsInStagesWithLifeCycleInfo.apply(this, arguments);    
+    },
+    invokeGovernanceProcess:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").invokeGovernanceProcess.apply(this, arguments);
+    },
+ 	setAutoDeployment:function(){
+       return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").setAutoDeployment.apply(this, arguments);
+    },
+    getNextLifeCycleStage:function(){
+       return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getNextLifeCycleStage.apply(this, arguments);
+    },
+    getPreviousLifeCycleStage:function(){
+       return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getPreviousLifeCycleStage.apply(this, arguments);
+    },
+    updateAutoBuild:function(){
+		return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").updateAutoBuild.apply(this, arguments);
+    },
+    updateAutoDeployment:function(){
+		return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").updateAutoDeployment.apply(this, arguments);
+    },
+    getLifecycleAction:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getLifecycleAction.apply(this, arguments);
+    },
+    getLifeCycleHistoryForApplication:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getLifeCycleHistoryForApplication.apply(this, arguments);
+    },
+    getAllLifeCycleStages:function(){
+            return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getAllLifeCycleStages.apply(this, arguments);
+    },
+    isInitialLifeCycleStage:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").isInitialLifeCycleStage.apply(this, arguments);
+    },
+    getInitialLifeCycleStages:function(){
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getInitialLifeCycleStages.apply(this, arguments);
+    },
+    createFork:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").createFork.apply(this, arguments);
+    },
+    getCheckItemsByPath:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getCheckItemsByPath.apply(this, arguments);
+    },
+    createForkBranch:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").createForkBranch.apply(this, arguments);
+    },
+    getCheckItemsByPathWithSleep:function () {
+        return jagg.require(jagg.getModulesDir() + "lifecycle/lifecycle.jag").getCheckItemsByPathWithSleep.apply(this, arguments);
+    }
+});
+%>
